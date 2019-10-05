@@ -19,6 +19,7 @@ class PvPowerForecasts(Base):
         self.azimuth = kwargs.get('azimuth')
         self.install_date = kwargs.get('install_date')
         self.loss_factor = kwargs.get('loss_factor')
+        self.hours = kwargs.get('hours')
         self.forecasts = None
 
         self.params = {'latitude' : self.latitude,
@@ -27,7 +28,8 @@ class PvPowerForecasts(Base):
                        'tilt' : self.tilt,
                        'azimuth' : self.azimuth,
                        'install_date' : self.install_date,
-                       'loss_factor' : self.loss_factor
+                       'loss_factor' : self.loss_factor,
+                       'hours': self.hours
                       }
 
         self._get(*args, **kwargs)
