@@ -8,7 +8,7 @@ from solcast.base import Base
 
 class PvPowerForecasts(Base):
 
-    end_point = 'pv_power/forecasts'
+    end_point = 'world_pv_power/forecasts'
 
     def __init__(self, latitude, longitude, capacity, *args, **kwargs):
 

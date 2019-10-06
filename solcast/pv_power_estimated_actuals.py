@@ -8,7 +8,7 @@ from solcast.base import Base
 
 class PvPowerEstimatedActuals(Base):
 
-    end_point = 'pv_power/estimated_actuals'
+    end_point = 'world_pv_power/estimated_actuals'
 
     def __init__(self, latitude, longitude, capacity, *args, **kwargs):
 
@@ -19,7 +19,8 @@ class PvPowerEstimatedActuals(Base):
         self.azimuth = kwargs.get('azimuth')
         self.install_date = kwargs.get('install_date')
         self.loss_factor = kwargs.get('loss_factor')
-        self.latest = kwargs.get('latest', False)
+        self.hours = kwargs.get('hours')
+        self.latest = kwargs.get('latest', False),
         self.estimated_actuals = None
 
         self.params = {'latitude' : self.latitude,
@@ -28,7 +29,8 @@ class PvPowerEstimatedActuals(Base):
                        'tilt' : self.tilt,
                        'azimuth' : self.azimuth,
                        'install_date' : self.install_date,
-                       'loss_factor': self.loss_factor
+                       'loss_factor': self.loss_factor,
+                       'hours': self.hours
                       }
 
         if self.latest:
